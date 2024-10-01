@@ -79,16 +79,48 @@ public static int arr2DSum(int[][]nums){
   * You may assume the array is rectangular and neither rows nor cols is 0.
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   */
-public static int[][] swapRC(int[][]nums){
-  return new int[1][1];
-}
+  public static int[][] swapRC(int[][] nums) {
+      int rows = nums.length;
+      int cols = nums[0].length;
+      int[][] swapped = new int[cols][rows];
+
+      for (int i = 0; i < rows; i++) {
+          for (int j = 0; j < cols; j++) {
+              swapped[j][i] = nums[i][j];
+          }
+      }
+      return swapped;
+  }
+
 
 public static void main (String[] args) {
-  int[] testCase = {2,3,4,9};
+  /* int[] testCase = {2,3,4,9};
   System.out.println(arrToString(testCase));
+  */
+
+
   int[][] testCase1 = new int[][] {{2,3,4,9}, {2,3,4,9}, {2,3,4,9}};
-  System.out.println(arrToString(testCase1));
-  System.out.println(arr2DSum(testCase1));
+  System.out.println("Should return [[2, 3, 4, 9], [2, 3, 4, 9], [2, 3, 4, 9]] ;;;;;;;" + "returns " + arrToString(testCase1));
+  System.out.println("Should return 54" + ";;;;;;;; returns " + arr2DSum(testCase1));
+  System.out.println("Adresses should be different + should print [[2, 2, 2], [3, 3, 3], [4, 4, 4], [9, 9, 9]]");
+  System.out.println(testCase1);
+  testCase1 = swapRC(testCase1);
+  System.out.println(testCase1);
+  System.out.println("Prints: " + arrToString(testCase1));
+
+  testCase1 = new int[][] {{11}, {21}, {31}};
+  System.out.println("Should return [[11], [21], [31]] ;;;;;;;  " + "returns " + arrToString(testCase1));
+  System.out.println("Should return 63" + ";;;;;;;; returns " + arr2DSum(testCase1));
+  System.out.println("Adresses should be different + should print [[11, 21, 31]]");
+  System.out.println(testCase1);
+  testCase1 = swapRC(testCase1);
+  System.out.println(testCase1);
+  System.out.println("Prints: " + arrToString(testCase1));
+
+  testCase1 = new int[][] {{11}, {}, {31,32,33,34}};
+  System.out.println("Should return [[11], [], [31, 32, 33, 34]] ;;;;;;;  " + "returns " + arrToString(testCase1));
+  System.out.println("Should return 141" + ";;;;;;;; returns " + arr2DSum(testCase1));
+
 }
 
 }
