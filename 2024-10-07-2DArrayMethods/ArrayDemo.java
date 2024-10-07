@@ -1,5 +1,4 @@
-public class ArrayDemo{
-  import java.util.Arrays;
+import java.util.Arrays;
 public class ArrayDemo{
   public static void main(String[]args){
     //write your tests here!
@@ -67,5 +66,4 @@ public class ArrayDemo{
   public static String htmlTable(int[][]nums){
     return "";
   }
-}
 }
