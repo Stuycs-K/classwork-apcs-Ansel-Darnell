@@ -5,7 +5,8 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
-
+    int [][] test = {{11,12,13}, {}, {31,32,33,34,35}, {41}};
+    System.out.println(htmlTable(test));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -111,6 +112,16 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String returnn = "<table>";
+    for(int i = 0; i < nums.length; i ++){
+      returnn += "<tr>";
+      for(int k =0; k < nums[i].length; k ++){
+        returnn += "<td>";
+        returnn += nums[i][k];
+        returnn += "</td>";
+      }
+      returnn += "</tr>";
+    }
+    return (returnn + "</table>");
   }
 }
