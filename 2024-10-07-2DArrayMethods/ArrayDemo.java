@@ -6,7 +6,32 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
     int [][] test = {{11,12,13}, {}, {31,32,33,34,35}, {41}};
+    System.out.println("Should print: <table><tr><td>11</td><td>12</td><td>13</td></tr><tr></tr><tr><td>31</td><td>32</td><td>33</td><td>34</td><td>35</td></tr><tr><td>41</td></tr></table>");
     System.out.println(htmlTable(test));
+    System.out.println("Should print: 0");
+    System.out.println(countZeros2D(test));
+    System.out.println("Should print: [[11, 12, 13], [], [31, 32, 33, 34, 35], [41]]");
+    System.out.println(arrToString(test));
+    System.out.println("Should be the same");
+    System.out.println(Arrays.deepToString(test));
+    test = new int[][] {{11,00,0}, {}, {0000,-0,-000,34,-35}, {41}};
+    System.out.println("Should print: <table><tr><td>11</td><td>0</td><td>0</td></tr><tr></tr><tr><td>0</td><td>0</td><td>0</td><td>34</td><td>-35</td></tr><tr><td>41</td></tr></table> ");
+    System.out.println(htmlTable(test));
+    System.out.println("Should print: 5");
+    System.out.println(countZeros2D(test));
+    System.out.println("Should print: [[11, 0, 0], [], [0, 0, 0, 34, -35], [41]]");
+    System.out.println(arrToString(test));
+    System.out.println("Should be the same");
+    System.out.println(Arrays.deepToString(test));
+    test = new int[][] {{11,00,0}};
+    System.out.println("Should print: <table><tr><td>11</td><td>0</td><td>0</td></tr></table>");
+    System.out.println(countZeros2D(test));
+    System.out.println("Should print: 2");
+    System.out.println(htmlTable(test));
+    System.out.println("Should print: [[11, 00, 0]]");
+    System.out.println(arrToString(test));
+    System.out.println("Should be the same");
+    System.out.println(Arrays.deepToString(test));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -37,7 +62,13 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int count = 0;
+    for(int i = 0; i < nums.length; i++){
+      for(int k = 0; k <nums[i].length;k++){
+        count += (nums[i][k] == 0) ? 1:0;
+      }
+    }
+    return count;
   }
 
   //2. Calculate the sum of a 2d array
