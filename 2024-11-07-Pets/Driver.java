@@ -1,10 +1,9 @@
 //When we called the getName for the animal we were given the original name given
 // but when we called the Bird we would get the newly updated getName() instead
 // of the original name since we overrid it.
-
-//Step 8:In Driver.java answer: What is the difference before and after you override this method?
-//What does this tell us about methods that are overridden?
-//When Birds call getName() it uses the bird getName NOT the getName from animal.
+// Bird b2 = new Animal("speak3", 3, "name3"); didnt work because Animal is
+// broader than bird and so an animal can not be converted to a bird. Like how
+// not all humans are dancers but all dancers are humans.
 public class Driver{
   public static void main(String[]args){
     //Animal Jimmeth = new Animal ("ahhhh", 9, "Jimmeth");
