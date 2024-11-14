@@ -31,11 +31,33 @@ public class ArrayListPractice {
     }
     return temp;
   }
-  /*
+
   public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
   //return a new ArrayList that has all values of a and b in alternating order that is:
   //a[0], b[0], a[1], b[1]...
   //If one list is longer than the other, just attach the remaining values to the end.
+    ArrayList<String> returnn = new ArrayList<String>(Math.max(a.size(),b.size()));
+    int i = 0;
+    while(i < Math.min(a.size(),b.size())){
+      returnn.add(a.get(i));
+      returnn.add(b.get(i));
+      i++;
+    }
+    if(a.size() != b.size()){
+      if(a.size() > b.size()){
+        while(i < a.size()){
+          returnn.add(a.get(i));
+            i++;
+        }
+      }
+      else{
+        while(i < b.size()){
+          returnn.add(b.get(i));
+            i++;
+        }
+      }
+    }
+    return returnn;
   }
-  */
+
 }
