@@ -16,21 +16,18 @@ public class Day1{
       int[] directions = {1,1,-1,-1};
       int pos = 0;
       for(int i = 0; i < text.length; i ++){
-        if(text[i].charAt(0) == 'R'){
-          pos = turn("right", pos);
-        }
-        else{         //(text[i].charAt(0) == "L"){
-          pos = turn("left", pos);
-        }
+        //System.out.println(pos);
+        pos = turn(text[i].charAt(0), pos);
+        //System.out.println(pos);
         if ((pos == 0) || (pos == 2)){
           verticalDistance += Integer.parseInt(text[i].substring(1)) * directions[pos];
         }
         else{
           horizontalDistance += Integer.parseInt(text[i].substring(1)) * directions[pos];
         }
-
+        //System.out.println("Vert: " + verticalDistance + "----- Horiz" + horizontalDistance);
       }
-      return horizontalDistance + verticalDistance;
+      return Math.abs(horizontalDistance) + Math.abs(verticalDistance);
     }
     catch (FileNotFoundException e){
       System.out.println("file not found");
@@ -38,8 +35,8 @@ public class Day1{
     }
 }
 
-  public static int turn(String direction, int pos){
-    if(direction.equals("right")){
+  public static int turn(char direction, int pos){
+    if(direction == 'R'){
       if(pos == 3){
         pos = 0;
       }
