@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Code{
+public class Day1{
   public static void main(String[] args){
     System.out.println(distance("input.txt"));
   }
@@ -10,7 +10,7 @@ public class Code{
     try{
       File fille = new File(filename);
       Scanner file = new Scanner(fille);
-      String[] text = file.nextLine().split(",");
+      String[] text = file.nextLine().split(", ");
       int horizontalDistance=0;
       int verticalDistance=0;
       int[] directions = {1,1,-1,-1};
@@ -23,10 +23,10 @@ public class Code{
           pos = turn("left", pos);
         }
         if ((pos == 0) || (pos == 2)){
-          verticalDistance += Integer.parseInt(text[i].substring(0)) * directions[pos];
+          verticalDistance += Integer.parseInt(text[i].substring(1)) * directions[pos];
         }
         else{
-          horizontalDistance += Integer.parseInt(text[i].substring(0)) * directions[pos];
+          horizontalDistance += Integer.parseInt(text[i].substring(1)) * directions[pos];
         }
 
       }
