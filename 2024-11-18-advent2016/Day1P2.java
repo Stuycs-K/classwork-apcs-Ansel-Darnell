@@ -1,9 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 
-public class Day2{
+public class Day1P2{
   public static void main(String[] args){
     System.out.println(distance("input.txt"));
   }
@@ -16,7 +16,7 @@ public class Day2{
       int verticalDistance=0;
       int[] directions = {1,1,-1,-1};
       int pos = 0;
-      ArrayList<int[]> been = new ArrayList<int[]>();
+      HashMap<int[], Integer> been = new HashMap<int[], Integer>();
       for(int i = 0; i < text.length; i ++){
         //System.out.println(pos);
         pos = turn(text[i].charAt(0), pos);
@@ -27,13 +27,13 @@ public class Day2{
         else{
           horizontalDistance += Integer.parseInt(text[i].substring(1)) * directions[pos];
         }
-        //System.out.println("Vert: " + verticalDistance + "----- Horiz" + horizontalDistance);
-        for({x , y} : been{
-          if ((verticalDistance == y) && (horizontalDistance == x)){
-            return Math.abs(horizontalDistance) + Math.abs(verticalDistance);
-          }
+        if(been.get(new int[]{horizontalDistance, verticalDistance}) == null){
+          been.put(new int[]{horizontalDistance, verticalDistance}, 1);
         }
-        been.add({horizontalDistance, verticalDistance});
+        else{
+          return Math.abs(horizontalDistance) + Math.abs(verticalDistance);
+        }
+        //System.out.println("Vert: " + verticalDistance + "----- Horiz" + horizontalDistance);
       }
       return Math.abs(horizontalDistance) + Math.abs(verticalDistance);
     }
