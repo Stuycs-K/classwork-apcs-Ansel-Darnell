@@ -1,6 +1,6 @@
 public class ColorDemo {
     public static void main(String[] args) {
-        draw((200 * 50), 200); // Draw 100 blocks, with 50 blocks per row
+        draw((2000 * 50), 239); // Draw 100 blocks, with 50 blocks per row
     }
 
     public static void draw(int times, int col) { // Randomly draws a "polluck" of n blocks
@@ -14,6 +14,6 @@ public class ColorDemo {
                 System.out.println();
             }
         }
-        System.out.print("\u001b[0m");
+        System.out.println("\u001b[0m");
     }
 }
