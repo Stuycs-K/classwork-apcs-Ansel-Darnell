@@ -46,21 +46,21 @@ public class Maker extends Adventurer{
   public String attack(Adventurer other)
   {
     other.applyDamage(17);
-    return other.getName();
+    return other.getName() + " hit for 17";
   }
 
   //heall or buff the target adventurer
   public String support(Adventurer other)
   {
     other.applyDamage(-15);
-    return other.getName();
+    return other.getName() + " healed for 15";
   }
 
   //heall or buff self
   public String support()
   {
     applyDamage(-15);
-    return super.getName();
+    return super.getName() + " healed for 15";
 
   }
 
@@ -68,7 +68,7 @@ public class Maker extends Adventurer{
   public String specialAttack(Adventurer other)
   {
     other.applyDamage(17 * getSpecial());
-    return other.getName();
+    return other.getName() + " dealt " + 17*getSpecial() + " damage";
   }
 
 }
